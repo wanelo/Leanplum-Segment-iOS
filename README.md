@@ -12,20 +12,26 @@ To install the Leanplum Segment integration, simply add this line to your
 
 Add the following lines to your AppDelegate or Controller:
 
-    NSString *const SEGMENT_WRITE_KEY = @"...";
+```objc
+    NSString *const SEGMENT_WRITE_KEY = @" ... ";
 
     SEGAnalyticsConfiguration *config =
         [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
     [config use:[SEGLeanplumIntegrationFactory instance]];
     [SEGAnalytics setupWithConfiguration:config];
+```
 
 Now you can use Segment as you are used to, e.g.:
 
-    [[SEGAnalytics sharedAnalytics] track:@"..." properties:@{ ... }];
+```objc
+    [[SEGAnalytics sharedAnalytics] track:@" ... " properties:@{ ... }];
+```
 
 In addition to that you can also use the advanced features of Leanplum, e.g.:
 
-    [Leanplum onVariablesChanged:<#^(void)block#>]
+```objc
+    [Leanplum onVariablesChanged: ... ]
+```
 
 ## Example
 We have included a sample application.
