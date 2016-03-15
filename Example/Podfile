@@ -1,0 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git'
+#use_frameworks! // TODO: Uncomment this (needs fix in Leanplum SDK)
+workspace './../LeanplumSegment'
+
+target 'LeanplumSegment_Example', :exclusive => true do
+    pod 'LeanplumSegment', :path => '../'
+    pod 'Analytics'
+    pod 'Leanplum-iOS-SDK'
+end
+
+target 'LeanplumSegment_Tests', :exclusive => true do
+    pod 'LeanplumSegment', :path => '../'
+    pod 'OCMock', '~> 3.2.2'
+end
+

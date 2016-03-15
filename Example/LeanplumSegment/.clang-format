@@ -1,0 +1,12 @@
+BasedOnStyle: WebKit
+IndentWidth: 4
+UseTab: Never
+PointerBindsToType: false
+ColumnLimit: 80
+IndentCaseLabels: true
+AllowShortFunctionsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+BreakBeforeBraces: Mozilla
+
