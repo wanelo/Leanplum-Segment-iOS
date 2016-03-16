@@ -6,7 +6,6 @@
 //
 
 #import "SEGLeanplumIntegration.h"
-#import <Leanplum/Leanplum.h>
 
 @implementation SEGLeanplumIntegration
 
