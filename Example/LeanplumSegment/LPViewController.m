@@ -43,8 +43,6 @@ NSString *const SEGMENT_WRITE_KEY = @"YLaT0mS6h8GdU0KErzTNsPfPvQqDV7sP";
                                    @"plan" : @"Enterprise"
                                }];
     [[SEGAnalytics sharedAnalytics] screen:@"Start"];
-
-    [Leanplum onVariablesChanged:<#^(void)block#>]
 }
 
 - (void)didReceiveMemoryWarning

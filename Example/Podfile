@@ -3,8 +3,6 @@ workspace './../LeanplumSegment'
 
 target 'LeanplumSegment_Example', :exclusive => true do
     pod 'LeanplumSegment', :path => '../'
-    pod 'Analytics', '~> 3'
-    pod 'Leanplum-iOS-SDK', '~> 1'
 end
 
 target 'LeanplumSegment_Tests', :exclusive => true do
