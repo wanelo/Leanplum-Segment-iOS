@@ -1,12 +1,11 @@
 //
 //  SEGLeanplumIntegration.m
-//  Leanplum Segment iOS Integration Version 1.0.0
+//  Leanplum Segment iOS Integration Version 1.0.1
 //
 //  Copyright (c) 2016 Leanplum. All rights reserved.
 //
 
 #import "SEGLeanplumIntegration.h"
-#import <Leanplum/Leanplum.h>
 
 @implementation SEGLeanplumIntegration
 

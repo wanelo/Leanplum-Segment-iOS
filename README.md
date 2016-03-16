@@ -1,36 +1,43 @@
 # Leanplum Segment Integration for iOS
-
-A Segment integration for the Leanplum iOS SDK.
+Leanplum SDK integration for the Segment iOS SDK.
 
 ## Installation
 To install the Leanplum Segment integration, simply add this line to your
 [CocoaPods](https://cocoapods.org) Podfile:
+```ruby
+pod 'LeanplumSegment', '~> 1.0.1'
+```
+That's it! Now you can use the Segment SDK and also the [advanced features](https://www.leanplum.com/docs#/docs) of the Leanplum SDK.
 
-`pod install LeanplumSegment`
+### Install Specific Version of SDK's
+By default this integration pulls in the latest versions of the Leanplum SDK and the Segment SDK. If you rather want to use a specific version, simply specify the required versions in your podfile directly.
+```ruby
+pod 'Analytics', '3.0.1'
+pod 'Leanplum-iOS-SDK', '1.2.23'
+```
 
 ## Usage
-
+Import the LeanplumSegment integration:
+```objc
+#import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
+```
 Add the following lines to your AppDelegate or Controller:
-
 ```objc
-    NSString *const SEGMENT_WRITE_KEY = @" ... ";
-
-    SEGAnalyticsConfiguration *config =
-        [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
-    [config use:[SEGLeanplumIntegrationFactory instance]];
-    [SEGAnalytics setupWithConfiguration:config];
+NSString *const SEGMENT_WRITE_KEY = @" ... ";
+SEGAnalyticsConfiguration *config =
+    [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
+[config use:[SEGLeanplumIntegrationFactory instance]];
+[SEGAnalytics setupWithConfiguration:config];
 ```
-
 Now you can use Segment as you are used to, e.g.:
-
 ```objc
-    [[SEGAnalytics sharedAnalytics] track:@" ... " properties:@{ ... }];
+[[SEGAnalytics sharedAnalytics] track:@" ... "];
 ```
-
 In addition to that you can also use the advanced features of Leanplum, e.g.:
-
 ```objc
-    [Leanplum onVariablesChanged: ... ]
+[Leanplum onVariablesChanged:^{
+    ...
+}];
 ```
 
 ## Example
@@ -46,5 +53,4 @@ We have included unit tests for the integration.
 2. Choose & test target `LeanplumSegment_Tests`
 
 ## License
-
 See LICENSE file.
