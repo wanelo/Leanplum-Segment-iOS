@@ -7,8 +7,8 @@ PODS:
   - OCMock (3.2.2)
 
 DEPENDENCIES:
-  - Analytics
-  - Leanplum-iOS-SDK
+  - Analytics (~> 3)
+  - Leanplum-iOS-SDK (~> 1)
   - LeanplumSegment (from `../`)
   - OCMock (~> 3.2.2)
 
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Analytics: b342fb4f43fa4f97ca6f4358b44d3295217ba294
   Leanplum-iOS-SDK: a5b637fef3e132e4c5df80c28ef6809526283488
-  LeanplumSegment: 28445db785ebb1b4a71ab0e0352fb9a4e4638689
+  LeanplumSegment: b57baf78a24e13d72e614cc029db356a4ed4ec85
   OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
 
 COCOAPODS: 0.39.0
