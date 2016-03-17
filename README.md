@@ -9,13 +9,6 @@ pod 'LeanplumSegment', '~> 1.0.1'
 ```
 That's it! Now you can use the Segment SDK and also the [advanced features](https://www.leanplum.com/docs#/docs) of the Leanplum SDK.
 
-### Install Specific Version of SDK's
-By default this integration pulls in the latest versions of the Leanplum SDK and the Segment SDK. If you rather want to use a specific version, simply specify the required versions in your podfile directly.
-```ruby
-pod 'Analytics', '3.0.1'
-pod 'Leanplum-iOS-SDK', '1.2.23'
-```
-
 ## Usage
 Import the LeanplumSegment integration:
 ```objc
@@ -52,5 +45,11 @@ We have included unit tests for the integration.
 1. To run the unit tests `open LeanplumSegment.xcworkspace`
 2. Choose & test target `LeanplumSegment_Tests`
 
+## Install Specific Version of SDK's
+By default this integration pulls in the latest versions of the Leanplum SDK and the Segment SDK. If you rather want to use a specific version, simply specify the required versions in your podfile directly.
+```ruby
+pod 'Analytics', '3.0.1'
+pod 'Leanplum-iOS-SDK', '1.2.23'
+```
 ## License
 See LICENSE file.
