@@ -51,5 +51,29 @@ By default this integration pulls in the latest versions of the Leanplum SDK and
 pod 'Analytics', '3.0.1'
 pod 'Leanplum-iOS-SDK', '1.2.23'
 ```
+## Deploy to CocoaPods
+1. Update Version in `LeanplumSegment.podspec`
+  
+  ```ruby
+  s.version          = "1.0.1"
+  ```
+2. Commit & Push Latest Changes, then mark latest release by tag:
+  
+  ```bash
+  git tag 1.0.0
+  git push --tags
+  ```
+3. Validate Library:
+  
+  ```bash
+  pod lib lint --use-libraries --verbose
+  pod spec lint --use-libraries --verbose
+  ```
+4. Publish to CocoaPods (Caution, once published cannot be undone!)
+  
+  ```bash
+  pod trunk push --use-libraries
+  ```
+
 ## License
 See LICENSE file.
