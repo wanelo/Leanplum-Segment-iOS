@@ -14,7 +14,7 @@ Import the LeanplumSegment integration:
 ```objc
 #import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
 ```
-Add the following lines to your AppDelegate or Controller:
+Add the following lines to your AppDelegate:
 ```objc
 NSString *const SEGMENT_WRITE_KEY = @" ... ";
 SEGAnalyticsConfiguration *config =

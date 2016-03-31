@@ -15,18 +15,11 @@
 
 @implementation LPViewController
 
-NSString *const SEGMENT_WRITE_KEY = @"YLaT0mS6h8GdU0KErzTNsPfPvQqDV7sP";
+NSString *const SEGMENT_WRITE_KEY = @"<KEY>";
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-// Do any additional setup after loading the view, typically from a nib.
-
-#if DEBUG
-    [Leanplum setApiHostName:@"leanplum-staging.appspot.com"
-             withServletName:@"api"
-                    usingSsl:YES];
-#endif
 
     SEGAnalyticsConfiguration *config =
         [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
