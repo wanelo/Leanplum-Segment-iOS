@@ -26,11 +26,25 @@ Now you can use Segment as you are used to, e.g.:
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@" ... "];
 ```
-In addition to that you can also use the advanced features of Leanplum, e.g.:
+
+In addition to that you can also use the advanced features of Leanplum. Once the 
+Leanplum SDK is successfully registered, Segement posts a NSNotification, hence register to it:
 ```objc
-[Leanplum onVariablesChanged:^{
-    ...
-}];
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+[...]
+  [[NSNotificationCenter defaultCenter]
+      addObserver:self
+         selector:@selector(segmentIntegrationDidStart)
+             name:SEGAnalyticsIntegrationDidStart
+           object:nil];
+}
+
+- (void)segmentIntegrationDidStart {
+  [Leanplum onVariablesChanged:^{
+      [...]
+  }];
+}
 ```
 
 ## Example
