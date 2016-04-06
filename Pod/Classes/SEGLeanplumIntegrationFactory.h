@@ -11,6 +11,8 @@
 
 @interface SEGLeanplumIntegrationFactory : NSObject <SEGIntegrationFactory>
 
+extern NSString *LPLeanplumSegmentKey;
+
 + (SEGLeanplumIntegrationFactory *)instance;
 - (SEGLeanplumIntegration *)createWithSettings:(NSDictionary *)settings
                                   forAnalytics:(SEGAnalytics *)analytics;
