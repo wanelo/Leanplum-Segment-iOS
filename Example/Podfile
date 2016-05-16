@@ -1,12 +1,7 @@
-source 'https://github.com/CocoaPods/Specs.git'
-workspace './../LeanplumSegment'
-
-target 'LeanplumSegment_Example', :exclusive => true do
+target 'LeanplumSegment_Example' do
     pod 'LeanplumSegment', :path => '../'
-end
-
-target 'LeanplumSegment_Tests', :exclusive => true do
+  target 'LeanplumSegment_Tests' do
     pod 'LeanplumSegment', :path => '../'
     pod 'OCMock', '~> 3.2.2'
+  end
 end
-
