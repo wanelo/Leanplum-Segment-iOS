@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LeanplumSegment"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "Leanplum SDK integration for the Segment iOS SDK."
   s.description      = "Mobile A/B testing, personalization & analytics in one powerful platform."
   s.homepage         = 'https://www.leanplum.com'
@@ -22,9 +22,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/Leanplum/Leanplum-Segment-iOS.git", :tag => s.version.to_s }
 
   s.source_files     = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'LeanplumSegment' => ['Pod/Assets/*.png']
-  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'Analytics', '~> 3'
