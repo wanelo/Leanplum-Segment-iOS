@@ -11,7 +11,7 @@
 @implementation SEGLeanplumIntegrationFactory
 
 static SEGLeanplumIntegrationFactory *sSharedInstance;
-static NSString *LEANPLUM_KEY = @"Leanplum";
+NSString *LPLeanplumSegmentKey = @"Leanplum";
 
 + (SEGLeanplumIntegrationFactory *)instance
 {
@@ -40,7 +40,7 @@ static NSString *LEANPLUM_KEY = @"Leanplum";
 
 - (NSString *)key
 {
-    return LEANPLUM_KEY;
+    return LPLeanplumSegmentKey;
 }
 
 @end

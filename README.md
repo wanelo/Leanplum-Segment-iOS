@@ -39,7 +39,7 @@ Leanplum SDK is successfully registered, Segement posts a NSNotification, hence 
       addObserver:self
          selector:@selector(segmentIntegrationDidStart)
              name:SEGAnalyticsIntegrationDidStart
-           object:@"Leanplum"];
+           object:LPLeanplumSegmentKey];
 }
 
 - (void)segmentIntegrationDidStart {
