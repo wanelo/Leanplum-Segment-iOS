@@ -52,8 +52,9 @@ Leanplum SDK is successfully registered, Segement posts a NSNotification, hence 
 ## Example
 We have included a sample application.
 
-1. To run the sample app `open LeanplumSegment.xcworkspace`
-2. Choose & run target `LeanplumSegment_Example`
+1. Install CocoaPods in Example Project: `cd Example && pod install`
+2. To run the sample app `open LeanplumSegment.xcworkspace`
+3. Choose & run target `LeanplumSegment_Example`
 
 ## Tests
 We have included unit tests for the integration.
