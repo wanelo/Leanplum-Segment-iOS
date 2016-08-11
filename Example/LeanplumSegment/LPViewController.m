@@ -15,7 +15,7 @@
 
 @implementation LPViewController
 
-NSString *const SEGMENT_WRITE_KEY = @"<KEY>";
+NSString *const SEGMENT_WRITE_KEY = @"NX0nsyR11lQr1lB0QIzabRVqSVkVAaxy";
 
 - (void)viewDidLoad
 {
@@ -26,16 +26,12 @@ NSString *const SEGMENT_WRITE_KEY = @"<KEY>";
     [config use:[SEGLeanplumIntegrationFactory instance]];
     [SEGAnalytics setupWithConfiguration:config];
 
-    [[SEGAnalytics sharedAnalytics] identify:@"f4ca124297"
+    [[SEGAnalytics sharedAnalytics] identify:nil
                                       traits:@{
-                                          @"name" : @"First Last",
-                                          @"email" : @"first@last.com"
+                                          @"name" : @"Anonymous user"
                                       }];
-    [[SEGAnalytics sharedAnalytics] track:@"Signed up"
-                               properties:@{
-                                   @"plan" : @"Enterprise"
-                               }];
-    [[SEGAnalytics sharedAnalytics] screen:@"Start"];
+
+    [self performSelector:@selector(login) withObject:nil afterDelay:3.f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +48,17 @@ NSString *const SEGMENT_WRITE_KEY = @"<KEY>";
                                    @"currency" : @"USD",
                                    @"title" : @"InApp Purchase"
                                }];
+}
+
+- (void)login
+{
+    // Simulate a login, where after users e-mail adress is known.
+    [[SEGAnalytics sharedAnalytics]
+        identify:@"3"
+          traits:@{
+              @"name" : @"John Doe",
+              @"email" : @"john.doe2@gmail.com"
+          }];
 }
 
 @end

@@ -83,6 +83,28 @@ SEGLeanplumIntegration* integration;
                    withUserAttributes:payload.traits]);
 }
 
+- (void)testIdentifyWithoutUserId
+{
+    SEGIdentifyPayload* payload = [[SEGIdentifyPayload alloc]
+                                   initWithUserId:nil
+                                   anonymousId:@"anonymousId"
+                                   traits:@{ @"email" : @"foo@bar.com" }
+                                   context:nil
+                                   integrations:nil];
+
+    id mockLeanplum = OCMClassMock([Leanplum class]);
+    SEL selector = @selector(setUserId:withUserAttributes:);
+    XCTAssertTrue([[Leanplum class] respondsToSelector:selector]);
+    OCMStub(ClassMethod([mockLeanplum methodForSelector:selector]));
+
+    [integration identify:payload];
+
+    [[NSRunLoop mainRunLoop] runUntilDate:
+     [NSDate dateWithTimeIntervalSinceNow:0.01]];
+    OCMVerify([mockLeanplum setUserId:payload.userId
+                   withUserAttributes:payload.traits]);
+}
+
 - (void)testTrack
 {
     SEGTrackPayload* payload = [[SEGTrackPayload alloc]
