@@ -57,25 +57,22 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         // Since Leanplum has value field that can be associated with any event,
-        // we have to extract that field from segments and send it with our event as a value.
+        // we have to extract that field from Segment and send it with our event as a value.
         if ([payload.properties objectForKey:@"value"])
         {
-            id object = [payload.properties objectForKey:@"value"];
-            if ([object isKindOfClass:[NSNumber class]])
+            id valueObject = [payload.properties objectForKey:@"value"];
+            if ([valueObject isKindOfClass:[NSNumber class]])
             {
-                double value = [object doubleValue];
+                double value = [valueObject doubleValue];
                 [Leanplum track:payload.event withValue:value andParameters:payload.properties];
             }
-            else
-            {
+            else {
                 [Leanplum track:payload.event withParameters:payload.properties];
             }
         }
-        else
-        {
+        else {
             [Leanplum track:payload.event withParameters:payload.properties];
         }
-        
     });
 }
 
